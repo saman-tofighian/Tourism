@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
 @import 'tailwindcss';
 * {
   box-sizing: border-box;
+  font-family: 'Noto Sans Arabic', sans-serif;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
 }
 body {
   width: 100%;
   font-size: 100%;
   overflow-x: hidden;
+  user-select: none;
+}
+.scrollbar-custom::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #fff8f5;
+  border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #5264ff;
+  border-radius: 10px;
 }
