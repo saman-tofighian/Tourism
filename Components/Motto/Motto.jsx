@@ -43,33 +43,57 @@ export default function Motto() {
           </div>
         </figure>
 
-        <div className='flex flex-col gap-6 col-span-12 xl:col-span-6'>
-          <span className='bg-[#FFE9D9] px-4 py-2 rounded-full w-fit text-[#FF7A00] text-sm'>
-            ✨ بسیار سفر کنید، دنیا بزرگ است
+        <section className='flex flex-col items-end gap-6 col-span-12 xl:col-span-6'>
+          <span className='flex items-center gap-x-4 bg-[#FFE9D9] px-[19px] py-[17px] rounded-[48px] w-fit font-bold text-[#FF7A00] text-[15px]'>
+            بسیار سفر باید تا پخته شود خامی
+            <Image src='/img/beachSunrise.png' width={18} height={18} />
           </span>
-
-          <h1 className='font-bold text-[#404040] text-[42px] leading-[1.4]'>
-            دنیا را کشف کنید <br />
-            زندگی را <span className='text-[#5264FF]'>تجربه</span> کنید ✈️
+          <h1 className='flex flex-col font-bold text-[#404040] text-[76px] text-end'>
+            <strong> دنیا را کشف کنید </strong>
+            <strong>
+              زندگی را <span className='text-[#5264FF]'>تجربه</span>
+            </strong>
+            <figure className='flex justify-end items-center gap-x-5 w-full'>
+              <Image
+                src='/img/airplan.png'
+                width={59}
+                height={59}
+                className='h-[59px]'
+              />
+              <figcaption>
+                <strong>کنید</strong>
+              </figcaption>
+            </figure>
           </h1>
 
           <div className='flex gap-6 mt-4'>
             {[
-              { name: 'جنگل', icon: '🌲' },
-              { name: 'شهر', icon: '🏙️' },
-              { name: 'ساحل', icon: '🏖️' },
-              { name: 'کمپ', icon: '🏕️' },
+              { name: 'جنگل', icon: '/img/joungle.png' },
+              { name: 'شهر', icon: '/img/city.png' },
+              { name: 'ساحل', icon: '/img/beach.png' },
+              { name: 'کمپ', icon: '/img/camping.png' },
             ].map((item) => (
-              <div
-                key={item.name}
-                className='flex flex-col items-center gap-2 px-4 py-3 border border-[#E5E7EB] rounded-2xl w-[90px]'
-              >
-                <span className='text-2xl'>{item.icon}</span>
-                <span className='text-[#404040] text-sm'>{item.name}</span>
-              </div>
+              <section className='text-center'>
+                <div
+                  key={item.name}
+                  className='flex flex-col items-center gap-2 px-4 py-3 border border-[#40404040] rounded-3xl w-[86px] h-[80px]'
+                >
+                  <figure className='flex justify-center items-center w-full h-full'>
+                    <Image
+                      src={item.icon}
+                      width={37}
+                      height={37}
+                      className='h-[37px]'
+                    />
+                  </figure>
+                </div>
+                <span className='text-[#404040] text-sm text-center'>
+                  {item.name}
+                </span>
+              </section>
             ))}
           </div>
-        </div>
+        </section>
       </div>
     </section>
   );
