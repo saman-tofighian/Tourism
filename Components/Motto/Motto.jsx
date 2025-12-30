@@ -23,7 +23,7 @@ export default function Motto() {
     setIndex((prev) => (prev === 0 ? destinations.length - 1 : prev - 1));
 
   return (
-    <section className='mt-6 px-[6%] border border-amber-300 w-full'>
+    <section className='mt-6 px-[6%] pb-8 w-full'>
       <div className='items-center gap-10 grid grid-cols-12'>
         <figure className='relative col-span-12 xl:col-span-6 overflow-hidden'>
           <Image
@@ -31,7 +31,7 @@ export default function Motto() {
             alt='destination'
             width={636}
             height={700}
-            className='rounded-[56px] w-full h-[776px] object-cover'
+            className='rounded-[56px] w-full h-[596px] xl:h-[776px] object-cover'
             priority
           />
 
@@ -61,43 +61,42 @@ export default function Motto() {
             </div>
           </div>
 
-          <div className='bottom-8 left-1/2 z-10 absolute flex items-center gap-4 bg-white shadow-xl px-6 py-5 rounded-[32px] w-[95%] -translate-x-1/2'>
-            <button className='bg-[#5264FF] px-8 py-3 rounded-full text-white text-sm shrink-0'>
+          <div className='bottom-5 xl:bottom-8 left-1/2 z-10 absolute flex xl:flex-row flex-col-reverse items-center gap-4 bg-white shadow-xl px-6 py-5 rounded-[32px] w-[95%] -translate-x-1/2'>
+            <button className='bg-[#5264FF] px-8 py-3 rounded-full text-white text-sm cursor-pointer shrink-0'>
               جستجو
             </button>
-
-            <div className='flex items-center gap-2 text-gray-500 text-sm'>
-              <CiLocationOn size={18} />
-              مقصد خود را انتخاب کنید
-            </div>
-
-            <span className='bg-gray-200 w-px h-6' />
-
-            <div className='flex items-center gap-2 text-gray-500 text-sm'>
-              <BsCalendar3 size={16} />
-              تاریخ ورود
-            </div>
-
-            <div className='flex items-center gap-2 text-gray-500 text-sm'>
-              <BsCalendar3 size={16} />
-              تاریخ خروج
-            </div>
-
-            <span className='bg-gray-200 w-px h-6' />
 
             <div className='flex items-center gap-2 text-gray-500 text-sm'>
               <HiOutlineUsers size={18} />
               تعداد
             </div>
+
+            <span className='hidden xl:block bg-gray-200 w-px h-6' />
+
+            <div className='flex items-center gap-2 text-gray-500 text-sm'>
+              <BsCalendar3 size={16} />
+              تاریخ خروج
+            </div>
+            <div className='flex items-center gap-2 text-gray-500 text-sm'>
+              <BsCalendar3 size={16} />
+              تاریخ ورود
+            </div>
+
+            <span className='hidden xl:block bg-gray-200 w-px h-6' />
+
+            <div className='flex items-center gap-2 text-gray-500 text-sm'>
+              <CiLocationOn size={18} />
+              مقصد خود را انتخاب کنید
+            </div>
           </div>
         </figure>
 
-        <section className='flex flex-col items-end gap-6 col-span-12 xl:col-span-6 border border-red-600'>
+        <section className='flex flex-col items-center xl:items-end gap-6 col-span-12 xl:col-span-6'>
           <span className='flex items-center gap-x-4 bg-[#FFE9D9] px-[19px] py-[17px] rounded-[48px] w-fit font-bold text-[#FF7A00] text-[15px]'>
             بسیار سفر باید تا پخته شود خامی
             <Image src='/img/beachSunrise.png' width={18} height={18} />
           </span>
-          <h1 className='flex flex-col font-bold text-[#404040] text-[76px] text-end'>
+          <h1 className='flex flex-col font-bold text-[#404040] lg:text-[76px] text-3xl md:text-5xl text-end'>
             <strong> دنیا را کشف کنید </strong>
             <strong>
               زندگی را <span className='text-[#5264FF]'>تجربه</span>
@@ -109,7 +108,7 @@ export default function Motto() {
               </figcaption>
             </figure>
           </h1>
-          <div className='flex gap-6 mt-4'>
+          <div className='flex justify-center xl:justify-end gap-6 mt-4 w-full'>
             {[
               { name: 'جنگل', icon: '/img/joungle.png' },
               { name: 'شهر', icon: '/img/city.png' },
