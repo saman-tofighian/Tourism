@@ -1,3 +1,4 @@
+import Famous from '@/Components/Famous/Famous';
 import Header from '@/Components/Header/Header';
 import Motto from '@/Components/Motto/Motto';
 
@@ -6,6 +7,7 @@ export default function Home() {
     <main className='w-full overflow-x-hidden'>
       <Header />
       <Motto />
+      <Famous />
     </main>
   );
 }
