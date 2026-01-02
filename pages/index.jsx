@@ -1,6 +1,7 @@
 import Famous from '@/Components/Famous/Famous';
 import Header from '@/Components/Header/Header';
 import Motto from '@/Components/Motto/Motto';
+import WhyTravel from '@/Components/WhyTravel/WhyTravel';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Motto />
       <Famous />
+      <WhyTravel />
     </main>
   );
 }
