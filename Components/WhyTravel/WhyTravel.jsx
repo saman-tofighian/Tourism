@@ -21,7 +21,7 @@ const features = [
 export default function WhyTravel() {
   return (
     <section className='mt-32 px-[6%] w-full'>
-      <div className='flex justify-end mb-10'>
+      <div className='flex justify-center lg:justify-end mb-10'>
         <h2 className='flex items-center gap-2 font-bold text-[#404040] text-[32px]'>
           <span className='text-red-500 text-3xl'>؟</span>
           چرا سفر کنم

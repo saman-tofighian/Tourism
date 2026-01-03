@@ -1,6 +1,7 @@
 import Famous from '@/Components/Famous/Famous';
 import Header from '@/Components/Header/Header';
 import Motto from '@/Components/Motto/Motto';
+import Sell from '@/Components/Sell/Sell';
 import WhyTravel from '@/Components/WhyTravel/WhyTravel';
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Motto />
       <Famous />
       <WhyTravel />
+      <Sell />
     </main>
   );
 }
