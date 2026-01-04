@@ -62,34 +62,49 @@ const places = [
 export default function Sell() {
   return (
     <section className='mt-28 px-[6%] py-8 w-full overflow-hidden'>
-      <div className='flex flex-wrap justify-end xl:justify-between items-center gap-y-6'>
-        <div className='flex items-center gap-x-6'>
+      <div className='flex xl:flex-row flex-col xl:justify-between xl:items-center gap-x-4 gap-y-8'>
+        <ul className='xl:hidden flex justify-center gap-6 xl:order-1 xl:mr-7 text-[#404040] text-sm whitespace-nowrap'>
+          <button className='cursor-pointer'>تور آسیا</button>
+          <button className='cursor-pointer'>تور اروپا</button>
+          <button className='cursor-pointer'>تور ایران</button>
+          <button className='border-b font-bold cursor-pointer'>
+            همه تورها
+          </button>
+        </ul>
+        <h2 className='xl:hidden font-bold text-[#404040] text-lg md:text-3xl text-center'>
+          <div className='inline-flex flex-col items-end gap-1'>
+            <span className='flex items-center gap-2'>
+              <Image src='/img/bomb.png' width={32} height={32} alt='bomb' />
+              پرفروش‌ترین تورها
+            </span>
+
+            <span className='block border-[#5264FF] border-b-2 w-10' />
+          </div>
+        </h2>
+
+        <div className='flex justify-center xl:justify-between items-center gap-x-5'>
           <button className='bg-[#EAEAEA] px-8 py-3 rounded-3xl text-sm cursor-pointer'>
             دیدن همه
           </button>
-          <span className=''>
-            <BsFilterRight size='2rem' className='cursor-pointer' />
-          </span>
+          <BsFilterRight size='1.8rem' className='cursor-pointer' />
         </div>
-
-        <section>
-          <div className='flex flex-wrap justify-end xl:justify-start gap-y-3 text-end'>
-            <ul className='flex gap-x-8 mr-7'>
-              <button className='cursor-pointer'>تور آسیا</button>
-              <button className='cursor-pointer'>تور اروپا</button>
-              <button className='cursor-pointer'>تور ایران</button>
-              <button className='border-b font-bold text-[#404040] cursor-pointer'>
-                همه تور ها
-              </button>
-            </ul>
-            <h2 className='flex items-center gap-2 font-bold text-[#404040] text-[19px] md:text-3xl'>
-              <Image src='/img/bomb.png' width={38} height={38} alt='bomb' />
-              پرفروش ترین تور ها
-            </h2>
-          </div>
-          <span className='block mt-2 ml-auto border-[#5264FF] border-b-2 w-12'></span>
-        </section>
+        <div className='hidden xl:flex'>
+          <ul className='flex gap-6 xl:order-1 xl:mr-7 text-[#404040] text-sm whitespace-nowrap'>
+            <button className='cursor-pointer'>تور آسیا</button>
+            <button className='cursor-pointer'>تور اروپا</button>
+            <button className='cursor-pointer'>تور ایران</button>
+            <button className='border-b font-bold cursor-pointer'>
+              همه تورها
+            </button>
+          </ul>
+          <h2 className='flex justify-end items-center gap-2 xl:order-2 font-bold text-[#404040] text-lg md:text-3xl'>
+            <Image src='/img/bomb.png' width={32} height={32} alt='bomb' />
+            پرفروش‌ترین تورها
+          </h2>
+        </div>
       </div>
+
+      <span className='hidden xl:block mt-2 ml-auto border-[#5264FF] border-b-2 w-12' />
 
       <div className='gap-y-10 md:gap-x-6 xl:gap-x-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-16'>
         {places.map((place) => (
