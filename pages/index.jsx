@@ -1,3 +1,4 @@
+import Banner from '@/Components/Banner/Banner';
 import Famous from '@/Components/Famous/Famous';
 import Header from '@/Components/Header/Header';
 import Motto from '@/Components/Motto/Motto';
@@ -12,6 +13,7 @@ export default function Home() {
       <Famous />
       <WhyTravel />
       <Sell />
+      <Banner />
     </main>
   );
 }
