@@ -28,12 +28,12 @@ export default function WhyTravel() {
         </h2>
       </div>
 
-      <div className='bg-[#5264FF] p-[48px] rounded-[56px]'>
+      <div className='bg-[url("/img/banner.png")] bg-cover bg-center p-[48px] rounded-[56px]'>
         <div className='flex flex-wrap xl:flex-nowrap justify-center xl:justify-between gap-8'>
           {features.map((item, i) => (
             <div key={i} className='w-full md:w-80 xl:w-[32%]'>
               <div
-                className='flex flex-col items-center bg-[#7A89FF] shadow-xl px-8 py-12 text-white text-center'
+                className='flex flex-col items-center bg-[#7a89ff85] shadow-xl px-8 py-12 text-white text-center'
                 style={{
                   clipPath:
                     'polygon(6% 0%, 94% 0%, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0% 94%, 0% 6%)',
