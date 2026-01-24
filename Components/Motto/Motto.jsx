@@ -13,7 +13,6 @@ const destinations = [
   { season: 'زمستان', country: 'دبی' },
   { season: 'پاییز', country: 'پاریس' },
 ];
-
 export default function Motto() {
   const [index, setIndex] = useState(0);
 
