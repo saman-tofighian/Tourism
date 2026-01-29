@@ -22,9 +22,19 @@ export default function WhyTravel() {
   return (
     <section className='mt-32 px-[6%] w-full'>
       <div className='flex justify-center lg:justify-end mb-10'>
+        <h2 className='flex items-center gap-2 font-bold text-[#404040] text-[32px]'></h2>
+      </div>
+
+      <div className='flex justify-center lg:justify-end mb-10'>
         <h2 className='flex items-center gap-2 font-bold text-[#404040] text-[32px]'>
-          <span className='text-red-500 text-3xl'>؟</span>
-          چرا سفر کنم
+          <div className='inline-flex flex-col items-end gap-1'>
+            <span className='flex items-center gap-2'>
+              <span className='text-red-500 text-3xl'>؟</span>
+              چرا سفر کنم
+            </span>
+
+            <span className='block border-[#5264FF] border-b-2 w-13' />
+          </div>
         </h2>
       </div>
 
