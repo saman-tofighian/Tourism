@@ -1,6 +1,7 @@
 import Banner from '@/Components/Banner/Banner';
 import Comments from '@/Components/Comments/Comments';
 import Famous from '@/Components/Famous/Famous';
+import Footer from '@/Components/Footer/Footer';
 import Header from '@/Components/Header/Header';
 import Motto from '@/Components/Motto/Motto';
 import Sell from '@/Components/Sell/Sell';
@@ -16,6 +17,7 @@ export default function Home() {
       <Sell />
       <Banner />
       <Comments />
+      <Footer />
     </main>
   );
 }
