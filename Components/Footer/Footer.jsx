@@ -31,7 +31,11 @@ export default function Footer() {
           >
             <FaLinkedin />
           </Link>
-          <Link href='/' target='_blank' className='text-[19px] text-white'>
+          <Link
+            href='https://github.com/saman-tofighian'
+            target='_blank'
+            className='text-[19px] text-white'
+          >
             <IoLogoGithub />
           </Link>
 
