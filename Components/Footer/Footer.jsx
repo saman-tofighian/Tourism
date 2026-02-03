@@ -27,14 +27,14 @@ export default function Footer() {
           <Link
             href='https://www.linkedin.com/in/saman-tofighian/'
             target='_blank'
-            className='text-[19px] text-white'
+            className='text-[19px] text-white hover:text-[#5264FF] duration-500 ease-out'
           >
             <FaLinkedin />
           </Link>
           <Link
             href='https://github.com/saman-tofighian'
             target='_blank'
-            className='text-[19px] text-white'
+            className='text-[19px] text-white hover:text-[#5264FF] duration-500 ease-out'
           >
             <IoLogoGithub />
           </Link>
@@ -42,7 +42,7 @@ export default function Footer() {
           <Link
             href='https://www.linkedin.com/in/saman-tofighian/'
             target='_blank'
-            className='text-[19px] text-white'
+            className='text-[19px] text-white hover:text-[#5264FF] duration-500 ease-out'
           >
             <FaTelegram />
           </Link>
