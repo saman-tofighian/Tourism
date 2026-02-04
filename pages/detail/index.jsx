@@ -3,6 +3,7 @@ import Header from '@/Components/Header/Header';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { BsBookmarkPlus } from 'react-icons/bs';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 import { IoHomeOutline } from 'react-icons/io5';
 
@@ -32,6 +33,36 @@ export default function Detail() {
     },
   ];
 
+  const places = [
+    {
+      id: 1,
+      title: 'تور مالزی',
+      image: '/img/1.png',
+      days: '3 روز و 4 شب',
+      price: '۸۵,۰۰۰,۰۰۰',
+      rate: 4.1,
+      discount: true,
+    },
+    {
+      id: 2,
+      title: 'تور دبی',
+      image: '/img/2.png',
+      days: '۳ روز و ۴ شب',
+      price: '۶۵,۰۰۰,۰۰۰',
+      rate: 4.9,
+      discount: false,
+    },
+    {
+      id: 3,
+      title: 'تور آنتالیا',
+      image: '/img/3.png',
+      days: '۳ روز و ۴ شب',
+      price: '۴۵,۰۰۰,۰۰۰',
+      rate: 4.1,
+      discount: false,
+    },
+  ];
+
   const [current, setCurrent] = useState(0);
   const [progress, setProgress] = useState(0);
   const [fade, setFade] = useState(true);
@@ -40,7 +71,7 @@ export default function Detail() {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.playbackRate = 1; // Ensure normal speed
+      video.playbackRate = 1;
       if (isPaused) {
         video.pause();
       } else {
@@ -139,7 +170,6 @@ export default function Detail() {
 
           <div className='absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent pointer-events-none' />
 
-          {/* Progress bar */}
           <div className='top-5 left-1/2 absolute bg-white/30 rounded-full w-[88%] h-[3px] overflow-hidden -translate-x-1/2 pointer-events-none'>
             <span
               className='block bg-white h-full transition-all duration-300'
@@ -147,7 +177,6 @@ export default function Detail() {
             />
           </div>
 
-          {/* Country info */}
           <div className='top-10 right-6 absolute flex items-center gap-2 bg-white/90 shadow-md px-4 py-2 rounded-full'>
             <Image
               src={slides[current].flag}
@@ -161,7 +190,6 @@ export default function Detail() {
             </span>
           </div>
 
-          {/* City title */}
           <div className='bottom-8 left-8 absolute text-white pointer-events-none'>
             <h2 className='drop-shadow-lg font-bold text-2xl md:text-4xl lg:text-5xl'>
               {slides[current].city}
@@ -171,12 +199,10 @@ export default function Detail() {
             </span>
           </div>
 
-          {/* Counter */}
           <div className='top-6 left-6 absolute bg-black/60 px-3 py-1 rounded-md text-white text-sm pointer-events-none'>
             {current + 1}/{slides.length}
           </div>
 
-          {/* Navigation buttons */}
           <button
             onClick={prevSlide}
             className='top-1/2 left-4 absolute bg-white/40 hover:bg-white/60 p-3 rounded-full text-white hover:text-gray-800 transition-all -translate-y-1/2 cursor-pointer'
@@ -191,6 +217,102 @@ export default function Detail() {
           >
             <GoArrowRight size='1.5rem' />
           </button>
+        </div>
+      </section>
+
+      <section className='mt-28 px-[6%] py-8 w-full'>
+        <div className='grid grid-cols-12 w-full'>
+          <div className='col-span-7 text-right'>
+            <div className='flex justify-between items-center w-full'>
+              <span className='flex justify-center items-center bg-[#F5F6FA] p-4 rounded-full cursor-pointer'>
+                <BsBookmarkPlus size='1.4rem' />
+              </span>
+              <h1 className='font-bold text-[36px]'>
+                تور 7 روزه ترکیه / آنتالیا
+              </h1>
+            </div>
+            <p className='mt-3 font-medium text-[#40404078]'>
+              تور خارجی/ تور اروپا
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className='mt-28 px-[6%] py-8 w-full'>
+        <div className='flex justify-between items-center'>
+          <button className='bg-[#EAEAEA] px-8 py-3 rounded-3xl text-sm cursor-pointer'>
+            دیدن همه
+          </button>
+
+          <div className='text-end'>
+            <h2 className='flex items-center gap-2 font-bold text-[#404040] text-[19px] md:text-3xl'>
+              تور های مشابه
+            </h2>
+            <span className='block mt-2 ml-auto border-[#5264FF] border-b-2 w-12'></span>
+          </div>
+        </div>
+
+        <div className='gap-y-10 md:gap-x-6 xl:gap-x-12 xl:gap-y-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-16'>
+          {places.map((place) => (
+            <article
+              key={place.id}
+              className='relative bg-white p-8 border border-[#40404040] rounded-[35px]'
+            >
+              {place.discount && (
+                <div className='-top-5 right-0 z-30 absolute flex flex-col justify-center items-center bg-[#FF9F45] shadow-lg rounded-full w-[78.6px] h-[78.6px] text-white discount-badge'>
+                  <span className='font-bold text-[16px] leading-none'>
+                    20%
+                  </span>
+                  <span className='text-[16px] leading-none'>تخفیف</span>
+                </div>
+              )}
+
+              <figure className='relative w-full'>
+                <Image
+                  src={place.image}
+                  width={380}
+                  height={260}
+                  alt={place.title}
+                  className='rounded-[25px] w-full h-[240px] object-cover'
+                />
+              </figure>
+
+              <div className='flex justify-between items-center mt-4'>
+                <div className='flex items-center gap-1 text-[#404040] text-sm'>
+                  <span className='font-semibold text-[25px]'>
+                    {place.rate}
+                  </span>
+                  <span className='text-[22px] text-yellow-400'>★</span>
+                </div>
+                <h3 className='font-medium text-[#404040] text-[28px]'>
+                  {place.title}
+                </h3>
+              </div>
+
+              <p
+                className='mt-2 text-[17px] text-gray-400 text-start'
+                dir='rtl'
+              >
+                <span>۳</span> روز و <span>۴</span> شب
+              </p>
+
+              <div className='flex justify-between items-center mt-4'>
+                <button className='flex justify-center items-center bg-[#5264FF] rounded-full w-[45px] h-[45px] text-white text-2xl cursor-pointer'>
+                  +
+                </button>
+
+                <div className='text-end'>
+                  <span className='flex items-center gap-x-2 font-bold text-[#404040] text-lg'>
+                    <span className='block mt-2 text-gray-400 text-xs'>
+                      هرفرد
+                    </span>
+                    <span className='block text-[#404040] text-xs'>تومان</span>
+                    {place.price}
+                  </span>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
