@@ -234,6 +234,35 @@ export default function Detail() {
             <p className='mt-3 font-medium text-[#40404078]'>
               تور خارجی/ تور اروپا
             </p>
+            <div className='mt-10 w-full'>
+              <ul className='flex justify-end gap-x-10 w-full'>
+                <li className='font-semibold text-2xl cursor-pointer'>...</li>
+                <li className='font-semibold text-2xl cursor-pointer'>نظرات</li>
+                <li className='font-semibold text-2xl cursor-pointer'>
+                  میزبان تور
+                </li>
+                <li className='font-semibold text-2xl cursor-pointer'>
+                  قوانین
+                </li>
+                <li className='font-semibold text-2xl cursor-pointer'>
+                  مکان ها
+                </li>
+                <li className='font-semibold text-2xl cursor-pointer'>بررسی</li>
+              </ul>
+              <span className='block bg-[#40404028] mt-3 w-full h-[1px]'></span>
+              <p className='mt-4 font-normal text-[18px] leading-9'>
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
+                در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان
+                جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را
+                برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
+                زبان فارسی ایجاد کرد. در این صورت می توان امید داشت
+              </p>
+              <span className='block bg-[#40404028] mt-3 w-full h-[1px]'></span>
+              <h5 className='mt-11 font-medium text-[20px]'>ویژگی ها</h5>
+            </div>
           </div>
         </div>
       </section>
