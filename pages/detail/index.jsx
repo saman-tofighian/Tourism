@@ -5,7 +5,9 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { BsBookmarkPlus } from 'react-icons/bs';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
-import { IoHomeOutline } from 'react-icons/io5';
+import { IoFastFoodOutline, IoHomeOutline, IoWifi } from 'react-icons/io5';
+import { RiDrinksLine } from 'react-icons/ri';
+import { TbBuildingHospital } from 'react-icons/tb';
 
 export default function Detail() {
   const videoRef = useRef(null);
@@ -249,7 +251,9 @@ export default function Detail() {
                 </li>
                 <li className='font-semibold text-2xl cursor-pointer'>بررسی</li>
               </ul>
+
               <span className='block bg-[#40404028] mt-3 w-full h-[1px]'></span>
+
               <p className='mt-4 font-normal text-[18px] leading-9'>
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                 استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
@@ -260,8 +264,185 @@ export default function Detail() {
                 برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
                 زبان فارسی ایجاد کرد. در این صورت می توان امید داشت
               </p>
+
               <span className='block bg-[#40404028] mt-3 w-full h-[1px]'></span>
+
               <h5 className='mt-11 font-medium text-[20px]'>ویژگی ها</h5>
+
+              <ul className='flex justify-end gap-x-10 mt-7 w-full'>
+                <li className='flex items-center gap-x-2 font-medium text-[16px]'>
+                  بیمه مسافرتی
+                  <TbBuildingHospital size='1.6rem' />
+                </li>
+                <li className='flex items-center gap-x-2 font-medium text-[16px]'>
+                  میان وعده رایگان
+                  <RiDrinksLine size='1.6rem' />
+                </li>
+                <li className='flex items-center gap-x-2 font-medium text-[16px]'>
+                  وای فای رایگان
+                  <IoWifi size='1.6rem' />
+                </li>
+                <li className='flex items-center gap-x-2 font-medium text-[16px]'>
+                  ناهار رایگان
+                  <IoFastFoodOutline size='1.6rem' />
+                </li>
+              </ul>
+
+              <span className='block bg-[#40404028] mt-7 w-full h-[1px]'></span>
+
+              <h5 className='mt-11 font-medium text-[20px]'>
+                برنامه تور (روز به روز)
+              </h5>
+
+              <div className='flex flex-col gap-y-6 mt-8 w-full'>
+                <div class='space-y-2'>
+                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
+                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
+                      <svg
+                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          stroke-width='2'
+                          d='M19 9l-7 7-7-7'
+                        ></path>
+                      </svg>
+                      <span>روز اول</span>
+                    </summary>
+                  </details>
+                </div>
+                <div class='space-y-2'>
+                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
+                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
+                      <svg
+                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          stroke-width='2'
+                          d='M19 9l-7 7-7-7'
+                        ></path>
+                      </svg>
+                      <span>روز دوم</span>
+                    </summary>
+                  </details>
+                </div>
+                <div class='space-y-2'>
+                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
+                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
+                      <svg
+                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          stroke-width='2'
+                          d='M19 9l-7 7-7-7'
+                        ></path>
+                      </svg>
+                      <span>روز سوم</span>
+                    </summary>
+                  </details>
+                </div>
+                <div class='space-y-2'>
+                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
+                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
+                      <svg
+                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          stroke-width='2'
+                          d='M19 9l-7 7-7-7'
+                        ></path>
+                      </svg>
+                      <span>روز چهارم</span>
+                    </summary>
+                  </details>
+                </div>
+                <div class='space-y-2'>
+                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
+                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
+                      <svg
+                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          stroke-width='2'
+                          d='M19 9l-7 7-7-7'
+                        ></path>
+                      </svg>
+                      <span>روز پنجم</span>
+                    </summary>
+                  </details>
+                </div>
+                <div class='space-y-2'>
+                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
+                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
+                      <svg
+                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          stroke-width='2'
+                          d='M19 9l-7 7-7-7'
+                        ></path>
+                      </svg>
+                      <span>روز ششم</span>
+                    </summary>
+                  </details>
+                </div>
+                <div class='space-y-2'>
+                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
+                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
+                      <svg
+                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          stroke-width='2'
+                          d='M19 9l-7 7-7-7'
+                        ></path>
+                      </svg>
+                      <span>روز هفتم</span>
+                    </summary>
+                  </details>
+                </div>
+              </div>
             </div>
           </div>
         </div>
