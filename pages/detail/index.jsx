@@ -3,7 +3,9 @@ import Header from '@/Components/Header/Header';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import { BsBookmarkPlus } from 'react-icons/bs';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { BsBookmarkPlus, BsCalendar3 } from 'react-icons/bs';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 import { IoFastFoodOutline, IoHomeOutline, IoWifi } from 'react-icons/io5';
 import { RiDrinksLine } from 'react-icons/ri';
@@ -69,6 +71,8 @@ export default function Detail() {
   const [progress, setProgress] = useState(0);
   const [fade, setFade] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
+  const [dateRange, setDateRange] = useState([null, null]);
+  const [startDate, endDate] = dateRange;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -223,8 +227,65 @@ export default function Detail() {
       </section>
 
       <section className='mt-28 px-[6%] py-8 w-full'>
-        <div className='grid grid-cols-12 w-full'>
-          <div className='col-span-7 text-right'>
+        <div className='gap-x-5 grid grid-cols-12 w-full'>
+          <div className='col-span-3 p-6 border border-[#40404040] rounded-4xl'>
+            <div className='flex justify-between items-center w-full'>
+              <span className='font-semibold text-[16px]'>
+                45.000.000 تومان/هرفرد
+              </span>
+              <button className='bg-[#FF6588] px-8 py-2 rounded-3xl text-white cursor-pointer'>
+                20%
+              </button>
+            </div>
+
+            <span className='block bg-[#40404040] mt-5 w-full h-[1px]'></span>
+
+            <div className='flex justify-between items-center mt-8 px-5 w-full text-center'>
+              <span>تاریخ اتمام </span>
+              <span>تاریخ شروع </span>
+            </div>
+
+            <div className='flex justify-between items-center gap-x-2 mt-4 w-full'>
+              <div className='flex items-center gap-x-2 bg-[#F5F6FA] px-3 py-[11px] rounded-3xl w-full text-sm'>
+                <BsCalendar3 size={16} />
+                <DatePicker
+                  selectsRange={true}
+                  startDate={startDate}
+                  endDate={endDate}
+                  onChange={(update) => {
+                    setDateRange(update);
+                  }}
+                  minDate={new Date()}
+                  dateFormat='yyyy/MM/dd'
+                  placeholderText='1404/1/18'
+                  className='border-none focus:outline-none w-full cursor-pointer'
+                  wrapperClassName='w-full'
+                />
+              </div>
+              <div className='flex items-center gap-x-2 bg-[#F5F6FA] px-3 py-[11px] rounded-3xl w-full text-sm'>
+                <BsCalendar3 size={16} />
+                <DatePicker
+                  selectsRange={true}
+                  startDate={startDate}
+                  endDate={endDate}
+                  onChange={(update) => {
+                    setDateRange(update);
+                  }}
+                  minDate={new Date()}
+                  dateFormat='yyyy/MM/dd'
+                  placeholderText='1404/1/18'
+                  className='border-none focus:outline-none w-full cursor-pointer'
+                  wrapperClassName='w-full'
+                />
+              </div>
+            </div>
+
+            <div className='mt-6 px-5 w-full text-end'>
+              <span className='font-medium'>تعداد افراد</span>
+            </div>
+          </div>
+
+          <div className='col-span-8 text-right'>
             <div className='flex justify-between items-center w-full'>
               <span className='flex justify-center items-center bg-[#F5F6FA] p-4 rounded-full cursor-pointer'>
                 <BsBookmarkPlus size='1.4rem' />
