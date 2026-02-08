@@ -73,6 +73,7 @@ export default function Detail() {
   const [isPaused, setIsPaused] = useState(false);
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
+  const [people, setPeople] = useState(1);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -282,6 +283,19 @@ export default function Detail() {
 
             <div className='mt-6 px-5 w-full text-end'>
               <span className='font-medium'>تعداد افراد</span>
+              <div className='flex items-center gap-2 bg-[#F5F6FA] mt-4 px-4 py-[1px] rounded-3xl font-medium text-[20px]'>
+                <select
+                  value={people}
+                  onChange={(e) => setPeople(Number(e.target.value))}
+                  className='flex bg-transparent border-none focus:outline-none w-full cursor-pointer'
+                >
+                  {[...Array(10).keys()].map((n) => (
+                    <option key={n + 1} value={n + 1}>
+                      {n + 1} نفر
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
 
