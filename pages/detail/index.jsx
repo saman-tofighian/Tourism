@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { BsBookmarkPlus, BsCalendar3 } from 'react-icons/bs';
+import { BsBookmarkPlus, BsCalendar3, BsChevronDown } from 'react-icons/bs';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 import { IoFastFoodOutline, IoHomeOutline, IoWifi } from 'react-icons/io5';
 import { RiDrinksLine } from 'react-icons/ri';
@@ -71,9 +71,20 @@ export default function Detail() {
   const [progress, setProgress] = useState(0);
   const [fade, setFade] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-  const [dateRange, setDateRange] = useState([null, null]);
-  const [startDate, endDate] = dateRange;
-  const [people, setPeople] = useState(1);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [people, setPeople] = useState(4);
+  const [isMadrakOpen, setIsMadrakOpen] = useState(false);
+
+  const [extras, setExtras] = useState({
+    pool: false,
+    massage: false,
+    breakfast: true,
+  });
+
+  const toggleExtra = (key) => {
+    setExtras((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -229,74 +240,189 @@ export default function Detail() {
 
       <section className='mt-28 px-[6%] py-8 w-full'>
         <div className='gap-x-5 grid grid-cols-12 w-full'>
-          <div className='col-span-3 p-6 border border-[#40404040] rounded-4xl'>
-            <div className='flex justify-between items-center w-full'>
-              <span className='font-semibold text-[16px]'>
-                45.000.000 تومان/هرفرد
+          <div className='col-span-3 bg-white px-6 py-8 border border-[#E5E5E5] rounded-[32px]'>
+            <div className='flex justify-between items-center'>
+              <span className='font-bold text-[#404040] text-xl'>
+                ۴۵.۰۰۰.۰۰۰{' '}
+                <span className='font-normal text-[#888] text-sm'>تومان</span>
+                <span className='mr-1 font-normal text-[#888] text-sm'>
+                  / هر فرد
+                </span>
               </span>
-              <button className='bg-[#FF6588] px-8 py-2 rounded-3xl text-white cursor-pointer'>
-                20%
-              </button>
-            </div>
-
-            <span className='block bg-[#40404040] mt-5 w-full h-[1px]'></span>
-
-            <div className='flex justify-between items-center mt-8 px-5 w-full text-center'>
-              <span>تاریخ اتمام </span>
-              <span>تاریخ شروع </span>
-            </div>
-
-            <div className='flex justify-between items-center gap-x-2 mt-4 w-full'>
-              <div className='flex items-center gap-x-2 bg-[#F5F6FA] px-3 py-[11px] rounded-3xl w-full text-sm'>
-                <BsCalendar3 size={16} />
-                <DatePicker
-                  selectsRange={true}
-                  startDate={startDate}
-                  endDate={endDate}
-                  onChange={(update) => {
-                    setDateRange(update);
-                  }}
-                  minDate={new Date()}
-                  dateFormat='yyyy/MM/dd'
-                  placeholderText='1404/1/18'
-                  className='border-none focus:outline-none w-full cursor-pointer'
-                  wrapperClassName='w-full'
-                />
-              </div>
-              <div className='flex items-center gap-x-2 bg-[#F5F6FA] px-3 py-[11px] rounded-3xl w-full text-sm'>
-                <BsCalendar3 size={16} />
-                <DatePicker
-                  selectsRange={true}
-                  startDate={startDate}
-                  endDate={endDate}
-                  onChange={(update) => {
-                    setDateRange(update);
-                  }}
-                  minDate={new Date()}
-                  dateFormat='yyyy/MM/dd'
-                  placeholderText='1404/1/18'
-                  className='border-none focus:outline-none w-full cursor-pointer'
-                  wrapperClassName='w-full'
-                />
+              <div className='bg-[#FF6588] px-8 py-2 rounded-2xl font-bold text-white text-sm'>
+                ۲۰٪
               </div>
             </div>
 
-            <div className='mt-6 px-5 w-full text-end'>
-              <span className='font-medium'>تعداد افراد</span>
-              <div className='flex items-center gap-2 bg-[#F5F6FA] mt-4 px-4 py-[1px] rounded-3xl font-medium text-[20px]'>
+            <div className='bg-[#E5E5E5] my-6 h-px'></div>
+
+            <div className='gap-4 grid grid-cols-2 mt-8 text-center'>
+              <div>
+                <span className='block mb-4 font-medium text-[#404040] text-sm'>
+                  تاریخ شروع
+                </span>
+                <div className='flex justify-between items-center bg-[#F5F6FA] px-4 py-3 rounded-2xl cursor-pointer'>
+                  <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    minDate={new Date()}
+                    dateFormat='yyyy/MM/dd'
+                    placeholderText='۱۴۰۳/۱/۱۲'
+                    className='bg-transparent border-0 focus:outline-none w-full text-sm cursor-pointer'
+                    wrapperClassName='w-full'
+                  />
+                  <BsCalendar3 size={18} className='text-[#888]' />
+                </div>
+              </div>
+
+              <div>
+                <span className='block mb-4 font-medium text-[#404040] text-sm'>
+                  تاریخ اتمام
+                </span>
+                <div className='flex justify-between items-center bg-[#F5F6FA] px-4 py-3 rounded-2xl cursor-pointer'>
+                  <DatePicker
+                    selected={endDate}
+                    onChange={(date) => setEndDate(date)}
+                    minDate={startDate || new Date()}
+                    dateFormat='yyyy/MM/dd'
+                    placeholderText='۱۴۰۳/۱/۱۸'
+                    className='bg-transparent border-0 focus:outline-none w-full text-sm cursor-pointer'
+                    wrapperClassName='w-full'
+                  />
+                  <BsCalendar3 size={18} className='text-[#888]' />
+                </div>
+              </div>
+            </div>
+
+            <div className='mt-10 text-end'>
+              <span className='block mb-5 font-medium text-[#404040] text-sm'>
+                تعداد افراد
+              </span>
+              <div className='flex justify-between items-center bg-[#F5F6FA] px-5 py-2 rounded-3xl cursor-pointer'>
                 <select
                   value={people}
                   onChange={(e) => setPeople(Number(e.target.value))}
-                  className='flex bg-transparent border-none focus:outline-none w-full cursor-pointer'
+                  className='bg-transparent border-0 focus:outline-none w-full font-medium text-[#404040] text-sm cursor-pointer'
                 >
-                  {[...Array(10).keys()].map((n) => (
-                    <option key={n + 1} value={n + 1}>
-                      {n + 1} نفر
-                    </option>
-                  ))}
+                  <option value={1}>۱ نفر</option>
+                  <option value={2}>۲ نفر</option>
+                  <option value={3}>۳ نفر</option>
+                  <option value={4}>۴ نفر (۳ بزرگسال، ۱ کودک)</option>
+                  <option value={5}>۵ نفر</option>
+                  <option value={6}>۶ نفر</option>
                 </select>
               </div>
             </div>
+
+            <div
+              onClick={() => setIsMadrakOpen(!isMadrakOpen)}
+              className='flex justify-between items-center mt-12 cursor-pointer'
+            >
+              <span className='flex items-center gap-1 font-bold text-[#404040] text-sm'>
+                ارسال مدارک مورد نیاز <span className='text-red-500'>*</span>
+              </span>
+              <BsChevronDown
+                size={14}
+                className={`text-[#888] transition-transform ${isMadrakOpen ? 'rotate-180' : ''}`}
+              />
+            </div>
+
+            <div className='mt-10'>
+              <div className='flex justify-between items-center gap-2 mb-4'>
+                <div className='bg-gray-300 w-3 h-[2px]'></div>
+                <span className='font-bold text-[#404040] text-sm'>
+                  مزایا اضافه
+                </span>
+              </div>
+
+              <div className='space-y-4 mt-3 text-sm'>
+                <div className='flex justify-between items-center'>
+                  <span className='text-gray-400 text-xs'>۹۰.۰۰۰ تومان</span>
+                  <div className='flex items-center gap-3'>
+                    <span className='text-gray-500'>هزینه استخر</span>
+                    <input
+                      type='checkbox'
+                      checked={extras.pool}
+                      onChange={() => toggleExtra('pool')}
+                      className='rounded w-5 h-5 accent-[#5264FF] cursor-pointer'
+                    />
+                  </div>
+                </div>
+
+                <div className='flex justify-between items-center'>
+                  <span className='text-gray-400 text-xs'>۲۰۰.۰۰۰ تومان</span>
+                  <div className='flex items-center gap-3'>
+                    <span className='text-gray-500'>هزینه ماساژ هر نفر</span>
+                    <input
+                      type='checkbox'
+                      checked={extras.massage}
+                      onChange={() => toggleExtra('massage')}
+                      className='rounded w-5 h-5 accent-[#5264FF] cursor-pointer'
+                    />
+                  </div>
+                </div>
+
+                <div className='flex justify-between items-center'>
+                  <span className='font-medium text-[#404040] text-xs'>
+                    ۶۰.۰۰۰ تومان
+                  </span>
+                  <div className='flex items-center gap-3'>
+                    <span className='font-medium text-[#404040]'>
+                      صبحانه برای هر نفر
+                    </span>
+                    <input
+                      type='checkbox'
+                      checked={extras.breakfast}
+                      onChange={() => toggleExtra('breakfast')}
+                      className='rounded w-5 h-5 accent-[#5264FF] cursor-pointer'
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* باکس هزینه‌ها */}
+            <div className='bg-[#F5F6FA] mt-8 p-5 rounded-[24px]'>
+              <span className='block mb-4 font-bold text-[#404040] text-sm'>
+                هزینه ها
+              </span>
+
+              <div className='space-y-3 text-sm'>
+                <div className='flex justify-between text-[#666]'>
+                  <span>تور ۷ روزه</span>
+                  <span className='font-bold text-[#404040]'>
+                    ۱۵۰.۰۰۰.۰۰۰ تومان
+                  </span>
+                </div>
+                <div className='flex justify-between text-[#666]'>
+                  <span>صبحانه برای هر نفر</span>
+                  <span className='font-bold text-[#404040]'>۶۰.۰۰۰ تومان</span>
+                </div>
+                <div className='flex justify-between text-[#666]'>
+                  <span>هزینه سرویس</span>
+                  <span className='font-bold text-[#404040]'>۶۰.۰۰۰ تومان</span>
+                </div>
+                <div className='flex justify-between text-[#FF6588]'>
+                  <span>تخفیف ۲۰٪</span>
+                  <span className='font-bold'>۲۰.۰۰۰.۰۰۰- تومان</span>
+                </div>
+              </div>
+            </div>
+
+            {/* قیمت نهایی */}
+            <div className='flex justify-between items-center mt-6 px-2'>
+              <span className='font-bold text-[#404040] text-lg'>
+                قیمت نهایی
+              </span>
+              <span className='font-bold text-[#404040] text-lg'>
+                ۱۳۰.۰۰۰.۰۰۰ تومان
+              </span>
+            </div>
+
+            {/* دکمه رزرو */}
+            <button className='bg-[#5264FF] hover:bg-[#4153EF] shadow-lg mt-6 py-4 rounded-[20px] w-full font-bold text-white text-lg transition-colors'>
+              رزرو کنید
+            </button>
           </div>
 
           <div className='col-span-8 text-right'>
