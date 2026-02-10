@@ -239,8 +239,8 @@ export default function Detail() {
       </section>
 
       <section className='mt-28 px-[6%] py-8 w-full'>
-        <div className='gap-x-5 grid grid-cols-12 w-full'>
-          <div className='col-span-3 bg-white px-6 py-8 border border-[#E5E5E5] rounded-[32px]'>
+        <div className='gap-x-5 gap-y-14 xl:gap-y-0 grid grid-cols-12 w-full'>
+          <div className='order-2 xl:order-1 col-span-12 xl:col-span-3 bg-white px-6 py-8 border border-[#E5E5E5] rounded-[32px]'>
             <div className='flex justify-between items-center'>
               <span className='font-bold text-[#404040] text-xl'>
                 ۴۵.۰۰۰.۰۰۰{' '}
@@ -335,7 +335,7 @@ export default function Detail() {
                 </span>
               </div>
 
-              <div className='space-y-4 mt-3 text-sm'>
+              <div className='space-y-8 mt-3 text-sm'>
                 <div className='flex justify-between items-center'>
                   <span className='text-gray-400 text-xs'>۹۰.۰۰۰ تومان</span>
                   <div className='flex items-center gap-3'>
@@ -381,51 +381,47 @@ export default function Detail() {
               </div>
             </div>
 
-            {/* باکس هزینه‌ها */}
-            <div className='bg-[#F5F6FA] mt-8 p-5 rounded-[24px]'>
-              <span className='block mb-4 font-bold text-[#404040] text-sm'>
-                هزینه ها
-              </span>
-
+            <span className='block mt-10 font-bold text-[#404040] text-sm text-end'>
+              هزینه ها
+            </span>
+            <div className='bg-[#F5F6FA] mt-5 p-4 rounded-[32px]'>
               <div className='space-y-3 text-sm'>
                 <div className='flex justify-between text-[#666]'>
-                  <span>تور ۷ روزه</span>
                   <span className='font-bold text-[#404040]'>
                     ۱۵۰.۰۰۰.۰۰۰ تومان
                   </span>
+                  <span>تور ۷ روزه</span>
                 </div>
                 <div className='flex justify-between text-[#666]'>
+                  <span className='font-bold text-[#404040]'>۶۰.۰۰۰ تومان</span>
                   <span>صبحانه برای هر نفر</span>
-                  <span className='font-bold text-[#404040]'>۶۰.۰۰۰ تومان</span>
                 </div>
                 <div className='flex justify-between text-[#666]'>
-                  <span>هزینه سرویس</span>
                   <span className='font-bold text-[#404040]'>۶۰.۰۰۰ تومان</span>
+                  <span>هزینه سرویس</span>
                 </div>
                 <div className='flex justify-between text-[#FF6588]'>
-                  <span>تخفیف ۲۰٪</span>
                   <span className='font-bold'>۲۰.۰۰۰.۰۰۰- تومان</span>
+                  <span> ٪۲۰ تخفیف</span>
                 </div>
               </div>
             </div>
 
-            {/* قیمت نهایی */}
             <div className='flex justify-between items-center mt-6 px-2'>
-              <span className='font-bold text-[#404040] text-lg'>
-                قیمت نهایی
-              </span>
               <span className='font-bold text-[#404040] text-lg'>
                 ۱۳۰.۰۰۰.۰۰۰ تومان
               </span>
+              <span className='font-bold text-[#404040] text-lg'>
+                قیمت نهایی
+              </span>
             </div>
 
-            {/* دکمه رزرو */}
-            <button className='bg-[#5264FF] hover:bg-[#4153EF] shadow-lg mt-6 py-4 rounded-[20px] w-full font-bold text-white text-lg transition-colors'>
+            <button className='bg-[#5264FF] hover:bg-[#4153EF] shadow-lg mt-6 py-2.5 rounded-[40px] w-full font-bold text-white text-lg transition-colors cursor-pointer'>
               رزرو کنید
             </button>
           </div>
 
-          <div className='col-span-8 text-right'>
+          <div className='order-1 xl:order-2 col-span-12 xl:col-span-8 text-right'>
             <div className='flex justify-between items-center w-full'>
               <span className='flex justify-center items-center bg-[#F5F6FA] p-4 rounded-full cursor-pointer'>
                 <BsBookmarkPlus size='1.4rem' />
@@ -437,11 +433,13 @@ export default function Detail() {
             <p className='mt-3 font-medium text-[#40404078]'>
               تور خارجی/ تور اروپا
             </p>
-            <div className='mt-10 w-full'>
-              <ul className='flex justify-end gap-x-10 w-full'>
+            <div className='mt-8 w-full'>
+              <ul className='flex justify-center xl:justify-end gap-x-14 xl:gap-x-10 w-full'>
                 <li className='font-semibold text-2xl cursor-pointer'>...</li>
-                <li className='font-semibold text-2xl cursor-pointer'>نظرات</li>
-                <li className='font-semibold text-2xl cursor-pointer'>
+                <li className='hidden xl:block font-semibold text-2xl cursor-pointer'>
+                  نظرات
+                </li>
+                <li className='hidden xl:block font-semibold text-2xl cursor-pointer'>
                   میزبان تور
                 </li>
                 <li className='font-semibold text-2xl cursor-pointer'>
@@ -468,22 +466,25 @@ export default function Detail() {
 
               <span className='block bg-[#40404028] mt-3 w-full h-[1px]'></span>
 
-              <h5 className='mt-11 font-medium text-[20px]'>ویژگی ها</h5>
+              <h5 className='mt-9 font-medium text-[20px]'>ویژگی ها</h5>
 
-              <ul className='flex justify-end gap-x-10 mt-7 w-full'>
-                <li className='flex items-center gap-x-2 font-medium text-[16px]'>
+              <ul className='gap-x-6 gap-y-6 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 mt-7 w-full text-right'>
+                <li className='flex justify-end items-center gap-x-2 font-medium text-[16px]'>
                   بیمه مسافرتی
                   <TbBuildingHospital size='1.6rem' />
                 </li>
-                <li className='flex items-center gap-x-2 font-medium text-[16px]'>
+
+                <li className='flex justify-end items-center gap-x-2 font-medium text-[16px]'>
                   میان وعده رایگان
                   <RiDrinksLine size='1.6rem' />
                 </li>
-                <li className='flex items-center gap-x-2 font-medium text-[16px]'>
+
+                <li className='flex justify-end items-center gap-x-2 font-medium text-[16px]'>
                   وای فای رایگان
                   <IoWifi size='1.6rem' />
                 </li>
-                <li className='flex items-center gap-x-2 font-medium text-[16px]'>
+
+                <li className='flex justify-end items-center gap-x-2 font-medium text-[16px]'>
                   ناهار رایگان
                   <IoFastFoodOutline size='1.6rem' />
                 </li>
@@ -491,7 +492,7 @@ export default function Detail() {
 
               <span className='block bg-[#40404028] mt-7 w-full h-[1px]'></span>
 
-              <h5 className='mt-11 font-medium text-[20px]'>
+              <h5 className='mt-9 font-medium text-[20px]'>
                 برنامه تور (روز به روز)
               </h5>
 
