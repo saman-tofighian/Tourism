@@ -67,6 +67,37 @@ export default function Detail() {
     },
   ];
 
+  const itinerary = [
+    {
+      day: 'روز اول',
+      description: 'ورود به شهر، تحویل هتل و استراحت اولیه پس از سفر',
+    },
+    {
+      day: 'روز دوم',
+      description: 'گشت شهری، بازدید از جاذبه‌های تاریخی و مراکز خرید',
+    },
+    {
+      day: 'روز سوم',
+      description: 'تور طبیعت‌گردی و صرف ناهار محلی در رستوران سنتی',
+    },
+    {
+      day: 'روز چهارم',
+      description: 'بازدید از موزه‌ها و تجربه فرهنگ محلی',
+    },
+    {
+      day: 'روز پنجم',
+      description: 'وقت آزاد برای خرید یا استراحت در هتل',
+    },
+    {
+      day: 'روز ششم',
+      description: 'تور اختیاری و عکاسی در لوکیشن‌های معروف',
+    },
+    {
+      day: 'روز هفتم',
+      description: 'جمع‌بندی سفر و آماده‌سازی برای بازگشت',
+    },
+  ];
+
   const [current, setCurrent] = useState(0);
   const [progress, setProgress] = useState(0);
   const [fade, setFade] = useState(true);
@@ -408,7 +439,7 @@ export default function Detail() {
             </div>
 
             <div className='flex justify-between items-center mt-6 px-2'>
-              <span className='font-bold text-[#404040] text-lg'>
+              <span className='xl:mt-1 font-bold text-[#404040] xl:text-[16px] text-lg'>
                 ۱۳۰.۰۰۰.۰۰۰ تومان
               </span>
               <span className='font-bold text-[#404040] text-lg'>
@@ -497,153 +528,32 @@ export default function Detail() {
               </h5>
 
               <div className='flex flex-col gap-y-6 mt-8 w-full'>
-                <div class='space-y-2'>
-                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
-                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
-                      <svg
-                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                      >
-                        <path
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
-                          stroke-width='2'
-                          d='M19 9l-7 7-7-7'
-                        ></path>
-                      </svg>
-                      <span>روز اول</span>
-                    </summary>
-                  </details>
-                </div>
-                <div class='space-y-2'>
-                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
-                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
-                      <svg
-                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                      >
-                        <path
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
-                          stroke-width='2'
-                          d='M19 9l-7 7-7-7'
-                        ></path>
-                      </svg>
-                      <span>روز دوم</span>
-                    </summary>
-                  </details>
-                </div>
-                <div class='space-y-2'>
-                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
-                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
-                      <svg
-                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                      >
-                        <path
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
-                          stroke-width='2'
-                          d='M19 9l-7 7-7-7'
-                        ></path>
-                      </svg>
-                      <span>روز سوم</span>
-                    </summary>
-                  </details>
-                </div>
-                <div class='space-y-2'>
-                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
-                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
-                      <svg
-                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                      >
-                        <path
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
-                          stroke-width='2'
-                          d='M19 9l-7 7-7-7'
-                        ></path>
-                      </svg>
-                      <span>روز چهارم</span>
-                    </summary>
-                  </details>
-                </div>
-                <div class='space-y-2'>
-                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
-                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
-                      <svg
-                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                      >
-                        <path
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
-                          stroke-width='2'
-                          d='M19 9l-7 7-7-7'
-                        ></path>
-                      </svg>
-                      <span>روز پنجم</span>
-                    </summary>
-                  </details>
-                </div>
-                <div class='space-y-2'>
-                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
-                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
-                      <svg
-                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                      >
-                        <path
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
-                          stroke-width='2'
-                          d='M19 9l-7 7-7-7'
-                        ></path>
-                      </svg>
-                      <span>روز ششم</span>
-                    </summary>
-                  </details>
-                </div>
-                <div class='space-y-2'>
-                  <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
-                    <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
-                      <svg
-                        class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
-                        xmlns='http://www.w3.org/2000/svg'
-                        fill='none'
-                        viewBox='0 0 24 24'
-                        stroke='currentColor'
-                      >
-                        <path
-                          stroke-linecap='round'
-                          stroke-linejoin='round'
-                          stroke-width='2'
-                          d='M19 9l-7 7-7-7'
-                        ></path>
-                      </svg>
-                      <span>روز هفتم</span>
-                    </summary>
-                  </details>
-                </div>
+                {itinerary.map((item) => (
+                  <div class='space-y-2'>
+                    <details class='group [&amp;_summary::-webkit-details-marker]:hidden'>
+                      <summary class='flex justify-between items-center gap-4 bg-white hover:bg-gray-50 px-4 py-3 border border-gray-200 rounded-lg font-medium text-gray-900 cursor-pointer'>
+                        <svg
+                          class='size-5 group-open:-rotate-180 transition-transform duration-300 shrink-0'
+                          xmlns='http://www.w3.org/2000/svg'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M19 9l-7 7-7-7'
+                          ></path>
+                        </svg>
+                        <span>{item.day}</span>
+                      </summary>
+                      <div className='bg-gray-50 px-4 py-3 rounded-lg text-gray-600 text-sm leading-7'>
+                        {item.description}
+                      </div>
+                    </details>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -727,7 +637,6 @@ export default function Detail() {
           ))}
         </div>
       </section>
-
       <Footer />
     </main>
   );
