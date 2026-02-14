@@ -145,10 +145,13 @@ export default function Header() {
                   <BsBasket3 size={18} />
                 </button>
 
-                <button className='flex justify-center items-center gap-2 hover:bg-gray-50 py-3 border border-[#E5E7EB] rounded-full text-[#404040] transition cursor-pointer'>
+                <Link
+                  href='/login'
+                  className='flex justify-center items-center gap-2 hover:bg-gray-50 py-3 border border-[#E5E7EB] rounded-full text-[#404040] transition cursor-pointer'
+                >
                   حساب کاربری
                   <IoPersonOutline size={18} />
-                </button>
+                </Link>
               </div>
             </motion.aside>
           </>
