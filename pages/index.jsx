@@ -1,3 +1,5 @@
+import AirplaneScene from '@/Components/3dModel/Model';
+import AddComment from '@/Components/AddComment/AddComment';
 import Banner from '@/Components/Banner/Banner';
 import Comments from '@/Components/Comments/Comments';
 import Famous from '@/Components/Famous/Famous';
@@ -16,7 +18,9 @@ export default function Home() {
       <WhyTravel />
       <Sell />
       <Banner />
+      <AirplaneScene />
       <Comments />
+      <AddComment />
       <Footer />
     </main>
   );

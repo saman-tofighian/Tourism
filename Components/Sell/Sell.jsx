@@ -6,7 +6,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 const toPersianDigits = (num) => {
   if (num === null || num === undefined) return '';
   const number =
-    typeof num === 'string' ? parseFloat(num.replace(/و/g, '')) : num;
+    typeof num === 'string' ? parseFloat(num.replace(/,/g, '')) : num;
   return new Intl.NumberFormat('fa-IR').format(number);
 };
 const allPlaces = [
