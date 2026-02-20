@@ -12,7 +12,6 @@ import { Suspense } from 'react';
 
 function AirplaneModel() {
   const { scene } = useGLTF('/img/airplane.glb');
-
   return (
     <primitive object={scene} scale={3.3} rotation={[0, -Math.PI / 2, 0]} />
   );
@@ -88,14 +87,7 @@ export default function PreCommentSection() {
               </Html>
             }
           >
-            <PresentationControls
-              global
-              config={{ mass: 2, tension: 500 }}
-              snap={{ mass: 4, tension: 1500 }}
-              rotation={[0.3, 0.9, 0]}
-              polar={[-Math.PI / 3, Math.PI / 3]}
-              azimuth={[-Math.PI / 1.4, Math.PI / 1.4]}
-            >
+            <PresentationControls rotation={[0.3, 0.9, 0]}>
               <Float speed={3} rotationIntensity={1} floatIntensity={1.5}>
                 <group position={[0, -1, 0]}>
                   <AirplaneModel />
@@ -111,7 +103,6 @@ export default function PreCommentSection() {
               far={4.5}
             />
           </Suspense>
-
           <Environment preset='city' />
         </Canvas>
       </div>
