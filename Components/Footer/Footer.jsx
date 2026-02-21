@@ -50,7 +50,13 @@ export default function Footer() {
         <span className='flex items-center text-white md:text-[16px] text-sm'>
           <strong className='mx-1 !text-[#5264FF]'>سامان توفیقیان</strong> طراحی
           و توسعه توسط
-          <span> © 2025</span>
+          <span>
+            {' '}
+            ©{' '}
+            {new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
+              year: 'numeric',
+            }).format(new Date())}
+          </span>
         </span>
       </div>
     </section>
