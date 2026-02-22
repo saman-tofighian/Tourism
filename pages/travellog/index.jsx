@@ -166,6 +166,7 @@ export default function TravelLogPage() {
         <motion.div
           layout
           className='gap-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+          dir='rtl'
         >
           <AnimatePresence mode='popLayout'>
             {filteredStories.map((story) => (
