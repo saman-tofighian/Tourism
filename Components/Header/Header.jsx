@@ -14,7 +14,7 @@ export default function Header() {
     { id: 1, name: 'هتل', href: '/' },
     { id: 2, name: 'تور داخلی', href: '/' },
     { id: 3, name: 'تور خارجی', href: '/' },
-    { id: 4, name: 'بیمه مسافرتی', href: '/' },
+    { id: 4, name: 'بیمه مسافرتی', href: '/insurance' },
     { id: 5, name: 'سفرنامه', href: '/travellog' },
   ];
 
