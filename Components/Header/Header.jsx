@@ -13,7 +13,7 @@ export default function Header() {
   const items = [
     { id: 1, name: 'هتل', href: '/' },
     { id: 2, name: 'تور داخلی', href: '/' },
-    { id: 3, name: 'تور خارجی', href: '/' },
+    { id: 3, name: 'تور خارجی', href: '/tours' },
     { id: 4, name: 'بیمه مسافرتی', href: '/insurance' },
     { id: 5, name: 'سفرنامه', href: '/travellog' },
   ];
@@ -33,7 +33,7 @@ export default function Header() {
 
   return (
     <>
-      <header className='top-0 z-[100] sticky bg-white border-[#E5E7EB] border-b w-full'>
+      <header className='z-[100] bg-white border-[#E5E7EB] border-b w-full'>
         <nav className='flex justify-between items-center mx-auto px-[6%] max-w-[1440px] h-[86px] xl:h-[100px]'>
           <section className='hidden xl:flex items-center gap-4'>
             <motion.button
