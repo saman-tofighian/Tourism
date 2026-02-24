@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { IoIosArrowDown } from 'react-icons/io';
 const places = [
   {
@@ -58,13 +59,12 @@ export default function Famous() {
         viewport={{ once: true }}
         className='flex flex-wrap justify-between items-center'
       >
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <Link
+          href='/tours'
           className='bg-[#EAEAEA] hover:bg-gray-200 px-8 py-3 rounded-3xl text-sm transition-colors cursor-pointer'
         >
           دیدن همه
-        </motion.button>
+        </Link>
 
         <div className='text-end'>
           <h2 className='flex items-center gap-2 font-bold text-[#404040] text-[19px] md:text-3xl'>

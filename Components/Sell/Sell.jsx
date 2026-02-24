@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { BsFilterRight } from 'react-icons/bs';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -149,16 +150,12 @@ export default function Sell() {
           >
             <BsFilterRight size='1.8rem' />
           </motion.div>
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              backgroundColor: '#5264FF',
-              color: '#fff',
-            }}
-            className='bg-[#EAEAEA] px-8 py-3 rounded-3xl text-sm transition-all cursor-pointer'
+          <Link
+            href='/tours'
+            className='bg-[#EAEAEA] px-8 py-3 rounded-3xl text-sm cursor-pointer'
           >
             دیدن همه
-          </motion.button>
+          </Link>
         </div>
       </div>
 
