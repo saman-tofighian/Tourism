@@ -12,20 +12,19 @@ body {
   overflow-x: hidden;
   user-select: none;
 }
-.scrollbar-custom::-webkit-scrollbar {
-  height: 6px;
+html {
+  scroll-behavior: smooth;
 }
-
-.scrollbar-custom::-webkit-scrollbar-track {
-  background: #fff8f5;
-  border-radius: 10px;
+html::-webkit-scrollbar {
+  width: 0.5rem;
 }
-
-.scrollbar-custom::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
   background: #5264ff;
-  border-radius: 10px;
+  border-radius: 5rem;
 }
-
 .discount-badge {
   clip-path: polygon(
     50% 0%,
