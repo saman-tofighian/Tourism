@@ -11,7 +11,7 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   const items = [
-    { id: 1, name: 'هتل', href: '/' },
+    { id: 1, name: 'هتل', href: '/hotel' },
     { id: 2, name: 'تور داخلی', href: '/iran' },
     { id: 3, name: 'تور خارجی', href: '/tours' },
     { id: 4, name: 'بیمه مسافرتی', href: '/insurance' },
