@@ -16,6 +16,7 @@ export default function Header() {
     { id: 3, name: 'تور خارجی', href: '/tours' },
     { id: 4, name: 'بیمه مسافرتی', href: '/insurance' },
     { id: 5, name: 'سفرنامه', href: '/travellog' },
+    { id: 6, name: 'خانه', href: '/' },
   ];
 
   const containerVariants = {

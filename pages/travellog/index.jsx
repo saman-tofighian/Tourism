@@ -65,7 +65,7 @@ const travelStories = [
     id: 6,
     title: 'ونیز؛ شهری روی آب',
     excerpt: 'گشت و گذار با گوندولا در میان کوچه‌پس‌کوچه‌های تاریخی...',
-    author: 'هدیه تهرانی',
+    author: 'سامان توفیقیان',
     date: '۱۴۰۴/۰۴/۰۵',
     image: '/img/t6.jpg',
     category: 'اروپا',
@@ -91,9 +91,9 @@ export default function TravelLogPage() {
       : travelStories.filter((s) => s.category === filter);
 
   return (
-    <main ref={containerRef} className='bg-[#fbfcfe] min-h-screen'>
+    <main ref={containerRef}>
       <Header />
-      <section className='relative flex justify-center items-center px-[6%] h-[65vh] overflow-hidden'>
+      <section className='relative flex justify-center items-center px-[6%] w-full min-h-[65vh] overflow-hidden'>
         <motion.div style={{ y }} className='z-0 absolute inset-0'>
           <Image
             src='/img/t0.jpg'
@@ -135,20 +135,21 @@ export default function TravelLogPage() {
         <div className='bottom-0 absolute inset-x-0 bg-gradient-to-t from-[#fbfcfe] to-transparent h-32' />
       </section>
 
-      <div className='top-[80px] z-40 sticky mb-16 py-8'>
-        <div className='flex flex-wrap justify-center gap-4 px-6'>
-          <div className='flex bg-white/70 shadow-blue-500/5 shadow-xl backdrop-blur-xl p-2 border border-white/50 rounded-full'>
+      <div className='top-[80px] z-40 sticky mb-10 sm:mb-16 px-4 sm:px-[6%] py-6 sm:py-8'>
+        <div className='flex flex-wrap justify-center gap-3 sm:gap-4'>
+          <div className='flex flex-wrap bg-white/70 shadow-blue-500/5 shadow-xl backdrop-blur-xl p-2 border border-white/50 rounded-2xl sm:rounded-full'>
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`relative px-7 py-2.5 rounded-full text-sm font-bold transition-all cursor-pointer duration-300 ${
+                className={`relative px-4 sm:px-7 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
                   filter === cat
                     ? 'text-white'
                     : 'text-gray-500 hover:text-gray-800'
                 }`}
               >
                 <span className='z-10 relative'>{cat}</span>
+
                 {filter === cat && (
                   <motion.span
                     layoutId='activeTab'
@@ -200,7 +201,7 @@ export default function TravelLogPage() {
                     </span>
                   </div>
 
-                  <h3 className='mb-5 font-black text-[#1a1a1a] group-hover:text-[#5264FF] text-2xl leading-snug transition-colors'>
+                  <h3 className='mb-5 font-black text-[#1a1a1a] text-[16px] group-hover:text-[#5264FF] md:text-2xl leading-snug transition-colors'>
                     {story.title}
                   </h3>
 
@@ -211,7 +212,7 @@ export default function TravelLogPage() {
                   <div className='flex justify-between items-center pt-8 border-gray-100 border-t'>
                     <motion.button
                       whileHover={{ gap: '12px' }}
-                      className='flex items-center gap-2 font-extrabold text-[#5264FF] text-sm cursor-pointer'
+                      className='flex items-center gap-2 font-extrabold text-[#5264FF] text-[12px] sm:text-sm cursor-pointer'
                     >
                       ادامه روایت
                       <span className='text-xl'>←</span>
@@ -221,7 +222,6 @@ export default function TravelLogPage() {
                       <span className='font-bold text-[10px] text-gray-400 uppercase'>
                         توسط {story.author}
                       </span>
-                      <div className='bg-gradient-to-tr from-[#5264FF] to-blue-300 rounded-full w-8 h-8' />
                     </div>
                   </div>
                 </div>
