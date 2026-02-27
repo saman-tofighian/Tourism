@@ -149,7 +149,7 @@ export default function InsurancePage() {
         </div>
       </section>
 
-      <section className='z-20 relative px-[6%] -translate-y-1/2'>
+      <section className='z-20 relative mt-14 sm:mt-0 px-[6%] -translate-y-1/2'>
         <div className='gap-6 grid grid-cols-2 md:grid-cols-4'>
           {[
             { label: 'مسافر بیمه شده', value: '50000+' },
@@ -161,7 +161,7 @@ export default function InsurancePage() {
               key={i}
               className='bg-white/90 shadow-2xl backdrop-blur-2xl p-8 border border-white rounded-[35px] text-center'
             >
-              <div className='mb-1 font-black text-[#5264FF] text-4xl'>
+              <div className='mb-1 font-black text-[#5264FF] text-[22px] md:text-4xl'>
                 <Counter value={stat.value} />
               </div>
               <div className='font-bold text-gray-400 text-xs'>
@@ -206,7 +206,7 @@ export default function InsurancePage() {
                       {dest === 'asia'
                         ? 'آسیا'
                         : dest === 'europe'
-                          ? 'اروپا (شینگن)'
+                          ? 'اروپا'
                           : 'کل دنیا'}
                     </button>
                   ))}
@@ -218,7 +218,7 @@ export default function InsurancePage() {
             <span className='opacity-70 mb-2 text-sm'>
               هزینه تقریبی روزانه:
             </span>
-            <div className='mb-6 font-black text-6xl'>
+            <div className='mb-6 font-black text-2xl md:text-6xl'>
               {totalPrice.toLocaleString()}{' '}
               <span className='text-xl'>تومان</span>
             </div>
