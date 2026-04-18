@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { BsBasket3, BsListNested } from 'react-icons/bs';
 import { CiSearch } from 'react-icons/ci';
 import { IoClose, IoPersonOutline } from 'react-icons/io5';
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
