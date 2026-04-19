@@ -9,7 +9,6 @@ import {
 import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion';
 import { Suspense } from 'react';
-
 function AirplaneModel() {
   const { scene } = useGLTF('/img/airplane.glb');
   return (
