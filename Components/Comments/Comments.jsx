@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { BiDislike, BiLike } from 'react-icons/bi';
-
 const toPersianDigits = (num) => {
   if (num === null || num === undefined) return '';
   return num.toString().replace(/\d/g, (x) => '۰۱۲۳۴۵۶۷۸۹'[x]);
