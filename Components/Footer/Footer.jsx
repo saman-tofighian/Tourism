@@ -1,5 +1,3 @@
-'use client'; // حتماً این بالا باشد
-
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,8 +8,7 @@ export default function Footer() {
   const currentYear = new Intl.DateTimeFormat('fa-IR-u-ca-persian', {
     year: 'numeric',
   }).format(new Date());
-
-  // تنظیمات انیمیشن برای پدیدار شدن نرم
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -21,7 +18,7 @@ export default function Footer() {
 
   return (
     <section className='bg-[#1a1a1a] mt-28 px-[6%] py-12 border-white/5 border-t w-full overflow-hidden'>
-      {/* ردیف اول: لوگو و ناوبری */}
+      
       <motion.div
         {...fadeInUp}
         className='flex lg:flex-row flex-col justify-between items-center gap-y-8 w-full'
@@ -58,7 +55,6 @@ export default function Footer() {
         </nav>
       </motion.div>
 
-      {/* خط جداکننده متحرک */}
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
@@ -66,7 +62,7 @@ export default function Footer() {
         className='bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-50 my-10 w-full h-[1px] origin-center'
       />
 
-      {/* ردیف دوم: سوشیال و کپی‌رایت */}
+
       <div className='flex lg:flex-row flex-col justify-between items-center gap-y-8 w-full'>
         <div className='flex gap-x-5'>
           {[
