@@ -262,7 +262,6 @@ export default function Sell() {
           ))}
         </AnimatePresence>
       </motion.div>
-
       {visibleCount < filteredPlaces.length && (
         <div className='flex flex-col items-center gap-2 mt-14'>
           <span className='text-gray-400 text-xs'>مشاهده تورهای بیشتر</span>
